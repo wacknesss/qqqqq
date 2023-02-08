@@ -1,9 +1,9 @@
 FROM node:lts-slim
 
-ENV SERVERLESS_VERSION=1.63.0 \
-    CLOUD_SDK_VERSION=279.0.0 \
+ENV SERVERLESS_VERSION=3.27.0 \
+    CLOUD_SDK_VERSION=410.0.0 \
     VAULT_VERSION=1.4.3 \
-    AWS_CLI_VERSION=1.17.11 \
+    AWS_CLI_VERSION=1.27.66 \
     CLOUDSDK_CORE_DISABLE_USAGE_REPORTING=true \
     PATH=$PATH:/usr/local/gcloud/google-cloud-sdk/bin:/usr/local/vault:/root/.pyenv/bin:/root/.pyenv/shims:/tfenv/bin \
     DEBIAN_FRONTEND=noninteractive \
@@ -36,7 +36,10 @@ RUN apt update && \
     pyenv install 3.6.10 && \
     pyenv install 3.7.6 && \
     pyenv install 3.8.1 && \
-    pyenv global 3.8.1 3.7.6 3.6.10 && \
+    pyenv install 3.9.16 && \
+    pyenv install 3.10.9 && \
+    pyenv install 3.11.1 && \
+    pyenv global 3.11.1 3.10.9 3.9.16 3.8.1 3.7.6 3.6.10 && \
     pyenv rehash && \
     pip3 install --upgrade pip && \
     pip3 install --upgrade awscli==$AWS_CLI_VERSION && \
@@ -59,7 +62,7 @@ RUN apt update && \
 # Install gcloud beta and serverless CLI
 RUN gcloud components update && \
     gcloud components install beta && \
-    npm config set unsafe-perm true && \
+#    npm config set unsafe-perm true && \
     npm install -g serverless@$SERVERLESS_VERSION
 
 LABEL name=sls version=$SERVERLESS_VERSION \
