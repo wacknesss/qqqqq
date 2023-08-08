@@ -1,5 +1,5 @@
 # hadolint ignore=DL3006
-FROM alpine AS base
+FROM alpine:3.18.3 AS base
 
 ENV PGBOUNCER_VERSION=1.12.0 \
     PATH=$PATH:/opt/pgbouncer
