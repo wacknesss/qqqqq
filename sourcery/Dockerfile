@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.12.0b1-slim
 
 ENV version=0.8.7
 RUN addgroup --system sourcery && adduser --disabled-password --system sourcery && \
