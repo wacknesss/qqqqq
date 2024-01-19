@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.13.0a3-alpine
 
 RUN apk add --no-cache curl && \ 
     pip install --no-cache-dir click requests
