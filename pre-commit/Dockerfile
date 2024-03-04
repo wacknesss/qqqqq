@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.13.0a3-slim
 
 ENV PATH="$PATH:/root/.pyenv/bin:/root/.pyenv/shims"
 ENV version=3.0.4
