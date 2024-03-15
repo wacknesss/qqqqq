@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.13.0a4-alpine
 
 ENV version=0.910
 RUN addgroup -S mypy && adduser -D -S mypy mypy && \
