@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.13.0a4-alpine
 
 ENV version=22.3.0
 RUN apk add --no-cache --virtual=.build-deps build-base && \
