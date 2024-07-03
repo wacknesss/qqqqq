@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node:20.15.0-slim
 
 ENV SERVERLESS_VERSION=1.63.0 \
     CLOUD_SDK_VERSION=279.0.0 \
